@@ -75,9 +75,6 @@ install_requires = [
     'pyobjc-framework-Cocoa>=4.2.2 ; sys_platform == "darwin"',
     'pyobjc-framework-FSEvents>=4.2.2 ; sys_platform == "darwin"',
 ]
-extras_require = {
-    'watchmedo': ['PyYAML>=3.10', 'argh>=0.24.1'],
-}
 
 with open('README.rst') as f:
     readme = f.read()
@@ -136,13 +133,9 @@ setup(name="watchdog",
       packages=find_packages(SRC_DIR),
       include_package_data=True,
       install_requires=install_requires,
-      extras_require=extras_require,
       cmdclass={
           'build_ext': build_ext,
       },
       ext_modules=ext_modules,
-      entry_points={'console_scripts': [
-          'watchmedo = watchdog.watchmedo:main [watchmedo]',
-      ]},
       zip_safe=False
 )
